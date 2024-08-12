@@ -8,6 +8,7 @@ namespace WebAPIDotNet.Models
         public string NAme { get; set; }
         public string? Address { get; set; }
 
+
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
 
