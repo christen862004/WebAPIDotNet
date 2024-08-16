@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPIDotNet.DTO;
@@ -17,6 +18,7 @@ namespace WebAPIDotNet.Controllers
         }
         //api/department verb get
         [HttpGet("p")]
+        [Authorize]
         public ActionResult<List<DeptWithEmpCountDTO>> GEtDEptDetails()
         {
             List<Department> deptlist =
@@ -36,16 +38,6 @@ namespace WebAPIDotNet.Controllers
             return deptListDto;
             //return Ok(deptlistDto); IActionREsult
           }
-
-
-
-
-
-
-
-
-
-
 
         [HttpGet]
         public IActionResult DisplayAllDept()
